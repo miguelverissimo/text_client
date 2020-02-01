@@ -4,8 +4,8 @@ defmodule TextClient.Player do
   # won, lost, good guess, bad guess, already used, initializing
   def play(%State{tally: %{game_state: :won}}), do: exit_with_message("You won!")
 
-  def play(%State{tally: %{game_state: :lost} = tally}) do
-    exit_with_message("You lost, the word you were looking for was #{tally.game_service.word}")
+  def play(%State{tally: %{game_state: :lost}}) do
+    exit_with_message("You lost.")
   end
 
   def play(%State{tally: %{game_state: :good_guess}} = game) do
